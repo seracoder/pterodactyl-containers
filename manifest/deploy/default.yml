@@ -24,6 +24,7 @@ services:
   # function correctly.
   ##
   cron:
+    platform: linux/arm64
     command: p:cron
     env_file: ./conf.d/panel.env
     image: mdhamim/pterodactyl-panel:${PANEL_VERSION:-latest}
@@ -60,6 +61,7 @@ services:
   # Stores Server/User information
   ##
   mariadb:
+    platform: linux/arm64
     image: docker.io/library/mariadb:10.11
     env_file: ./conf.d/mariadb.env
     networks:
@@ -97,6 +99,7 @@ services:
   # -- Redis --
   ##
   redis:
+    platform: linux/arm64
     cpu_count: 2
     cpu_percent: 50
     image: docker.io/library/redis:alpine
