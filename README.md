@@ -1,5 +1,5 @@
 
-
+## FOR ARM64
 # ccarney16/pterodactyl-containers
 
 Pterodactyl, a free an open source agnostic game panel... In a Container!
