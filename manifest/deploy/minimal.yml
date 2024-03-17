@@ -12,9 +12,10 @@ services:
   # function correctly.
   ##
   cron:
+    platform: linux/arm64
     command: p:cron
     env_file: ./conf.d/panel.env
-    image: ccarney16/pterodactyl-panel:${PANEL_VERSION:-latest}
+    image: mdhamim/pterodactyl-panel:${PANEL_VERSION:-latest}
     profiles: [ panel ]
     restart: always
     volumes:
@@ -24,9 +25,10 @@ services:
   # This service provides the wings runtime.
   ##
   daemon:
+    platform: linux/arm64
     environment:
       - TZ=${DAEMON_TIMEZONE:-UTC}
-    image: docker.io/ccarney16/pterodactyl-daemon:${DAEMON_VERSION:-latest}
+    image: docker.io/mdhamim/pterodactyl-daemon:${DAEMON_VERSION:-latest}
     privileged: true
     profiles: [ daemon ]
     restart: always
@@ -59,8 +61,9 @@ services:
   # This is the container that provides the main web interface.
   ##
   panel:
+    platform: linux/arm64
     env_file: ./conf.d/panel.env
-    image: docker.io/ccarney16/pterodactyl-panel:${PANEL_VERSION:-latest}
+    image: docker.io/mdhamim/pterodactyl-panel:${PANEL_VERSION:-latest}
     profiles: [ panel ]
     restart: always
     volumes:
@@ -88,9 +91,10 @@ services:
   # -- Panel Worker --
   ##
   worker:
+    platform: linux/arm64
     command: p:worker
     env_file: ./conf.d/panel.env
-    image: docker.io/ccarney16/pterodactyl-panel:${PANEL_VERSION:-latest}
+    image: docker.io/mdhamim/pterodactyl-panel:${PANEL_VERSION:-latest}
     profiles: [ panel ]
     restart: always
     volumes:
