@@ -1,5 +1,5 @@
 
-## FOR ARM64
+## FOR ARM64 (CHANGED FOR RASBERRY PI 5)
 # ccarney16/pterodactyl-containers
 
 Pterodactyl, a free an open source agnostic game panel... In a Container!
