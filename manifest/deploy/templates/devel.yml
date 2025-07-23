@@ -38,7 +38,7 @@ services:
       context: ./manifest/images/daemon
     environment:
       - TZ=${DAEMON_TIMEZONE:-UTC}
-    image: docker.io/ccarney16/pterodactyl-daemon:${DAEMON_VERSION:-latest}
+    image: docker.io/mdhamim/pterodactyl-daemon:${DAEMON_VERSION:-latest}
     ports:
       - 2022:2022
       - 8080:8080
@@ -81,7 +81,7 @@ services:
         VERSION: ${PANEL_VERSION}
       context: ./manifest/images/panel
     env_file: ./conf.d/panel.env
-    image: docker.io/ccarney16/pterodactyl-panel:${PANEL_VERSION:-latest}
+    image: docker.io/mdhamim/pterodactyl-panel:${PANEL_VERSION:-latest}
     ports:
       - 80:80
       - 443:443
